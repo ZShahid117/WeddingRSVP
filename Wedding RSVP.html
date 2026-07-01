@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria & Zuhayr — November 8, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#1c6e5c;--teal-light:#2a8f76;
+  --fern:#7ebd6f;--fern-light:#a2d396;
+  --sky:#a4cef2;--sky-pale:#d0e6f9;--sky-deep:#6baae0;
+  --blush:#c19c8f;--blush-light:#d9beb4;
+  --kiki-red:#c42d2d;--kiki-red-deep:#a02020;
+  --navy:#2a3555;--navy-light:#3d4e72;
+  --sage:#c5cdb5;--sage-light:#dde3d2;
+  --lavender:#b5b0c8;
+  --cream:#faf8f4;--warm-white:#fff;
+  --brown:#6b5a4e;--gold:#b8a033;
+  --shadow:rgba(42,53,85,.08);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;background:var(--cream);
+  color:var(--navy);overflow-x:hidden;min-height:100vh;
+}
+
+/* ═══ SKY SCENE ═══ */
+.sky-scene{
+  position:relative;width:100%;min-height:520px;overflow:hidden;
+  background:linear-gradient(180deg,#7bb8e0 0%,var(--sky) 30%,var(--sky-pale) 60%,#f0e8d8 85%,var(--cream) 100%);
+}
+.s-cloud{position:absolute;opacity:.7;animation:cloud-drift linear infinite}
+@keyframes cloud-drift{0%{transform:translateX(-100%)}100%{transform:translateX(calc(100vw + 100%))}}
+
+.flyer{position:absolute;top:28%;left:50%;transform:translateX(-50%);animation:fly-bob 4s ease-in-out infinite;z-index:3}
+@keyframes fly-bob{0%,100%{transform:translateX(-50%) translateY(0) rotate(-2deg)}50%{transform:translateX(-50%) translateY(-18px) rotate(1deg)}}
+.cat-companion{position:absolute;top:32%;left:calc(50% + 55px);animation:fly-bob 4s ease-in-out infinite;animation-delay:-.3s;z-index:3}
+
+.bird{position:absolute;z-index:2;animation:bird-fly 12s linear infinite}
+@keyframes bird-fly{0%{transform:translate(0,0)}25%{transform:translate(80px,-20px)}50%{transform:translate(160px,5px)}100%{transform:translate(600px,-40px)}}
+
+.town{position:absolute;bottom:0;left:0;width:100%;z-index:2}
+
+.floating-envelope{position:fixed;pointer-events:none;z-index:0;animation:env-float 16s ease-in-out infinite alternate;opacity:.12}
+@keyframes env-float{0%{transform:translate(0,0) rotate(-5deg)}33%{transform:translate(20px,-30px) rotate(3deg)}66%{transform:translate(-15px,-10px) rotate(-2deg)}100%{transform:translate(10px,-25px) rotate(4deg)}}
+
+/* ═══ LAYOUT ═══ */
+.page-wrapper{position:relative;z-index:4;max-width:620px;margin:0 auto;padding:0 20px 60px;margin-top:-60px}
+
+.hero-text{position:absolute;z-index:5;bottom:90px;left:0;right:0;text-align:center;animation:fadeUp 1s ease-out .3s both}
+.hero-tag{font-family:'DM Sans',sans-serif;font-weight:300;font-size:.72rem;letter-spacing:5px;text-transform:uppercase;color:var(--teal);margin-bottom:6px;background:rgba(250,248,244,.6);display:inline-block;padding:4px 14px;border-radius:20px}
+.hero-names{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.4rem,7vw,3.8rem);line-height:1.1;color:var(--navy)}
+.hero-names .amp{font-style:italic;font-weight:300;color:var(--kiki-red);font-size:.5em;vertical-align:middle;margin:0 .3em}
+.hero-date-line{margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:2px;color:var(--brown);background:rgba(250,248,244,.55);display:inline-block;padding:3px 12px;border-radius:16px}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:translateY(0)}}
+
+/* ═══ CARDS ═══ */
+.card{background:var(--warm-white);border-radius:20px;padding:32px 28px;margin-bottom:22px;box-shadow:0 2px 24px var(--shadow),0 0 0 1px rgba(28,110,92,.04);animation:fadeUp .8s ease-out both}
+.card:nth-child(1){animation-delay:.1s}.card:nth-child(2){animation-delay:.2s}.card:nth-child(3){animation-delay:.3s}.card:nth-child(4){animation-delay:.4s}
+.card-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.card-header .card-icon{width:36px;height:36px;flex-shrink:0}
+.card-header h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.4rem;color:var(--navy)}
+.card p{line-height:1.75;font-weight:300;font-size:.92rem;margin-bottom:6px;color:var(--navy-light)}
+
+.details-list{margin-top:12px}
+.detail-row{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--sage-light);font-size:.92rem}
+.detail-row:last-child{border-bottom:none}
+.detail-row .d-label{font-weight:500;color:var(--teal);min-width:70px;font-size:.8rem;letter-spacing:.5px;text-transform:uppercase;padding-top:1px}
+.detail-row .d-value{font-weight:300;color:var(--navy)}
+
+.bakery-deco{display:flex;justify-content:center;gap:16px;margin:18px 0 8px;opacity:.5}
+
+/* ═══ RSVP FORM ═══ */
+.rsvp-card{border-top:3px solid var(--kiki-red);position:relative;overflow:hidden}
+.rsvp-card::before{content:'';position:absolute;top:-1px;right:-1px;width:80px;height:80px;background:linear-gradient(135deg,transparent 50%,var(--sage-light) 50%);border-radius:0 20px 0 0;opacity:.4}
+
+.form-row{margin-bottom:16px}
+.form-row label{display:block;font-weight:500;font-size:.8rem;margin-bottom:5px;letter-spacing:.4px;color:var(--teal);text-transform:uppercase}
+.form-row input,.form-row textarea,.form-row select{width:100%;padding:12px 14px;border:1.5px solid var(--sage);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:.92rem;background:var(--cream);color:var(--navy);transition:border .2s,box-shadow .2s}
+.form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(28,110,92,.1)}
+.form-row textarea{resize:vertical;min-height:80px}
+
+/* ── Name lookup ── */
+.lookup-row{display:flex;gap:10px;margin-bottom:8px}
+.lookup-row input{flex:1}
+.btn-lookup{
+  padding:12px 20px;background:var(--teal);color:var(--cream);border:none;
+  border-radius:12px;font-family:'DM Sans',sans-serif;font-size:.85rem;
+  font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap;
+  box-shadow:0 2px 10px rgba(28,110,92,.15);
+}
+.btn-lookup:hover{background:var(--teal-light);transform:translateY(-1px)}
+
+/* Error / success messages */
+.lookup-msg{
+  padding:10px 14px;border-radius:10px;font-size:.85rem;font-weight:400;
+  margin-bottom:16px;display:none;animation:fadeUp .3s ease-out;
+}
+.lookup-msg.error{
+  display:block;background:rgba(196,45,45,.08);border:1.5px solid rgba(196,45,45,.25);
+  color:var(--kiki-red-deep);
+}
+.lookup-msg.success{
+  display:block;background:rgba(28,110,92,.06);border:1.5px solid rgba(28,110,92,.2);
+  color:var(--teal);
+}
+.lookup-msg svg{vertical-align:middle;margin-right:6px}
+
+/* ── Group member list ── */
+.group-panel{
+  display:none;animation:fadeUp .4s ease-out;
+}
+.group-panel.show{display:block}
+.group-title{
+  font-size:.78rem;font-weight:500;color:var(--teal);
+  text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px;
+}
+.member-list{margin-bottom:18px}
+.member-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px;margin-bottom:6px;
+  background:var(--cream);border:1.5px solid var(--sage);
+  border-radius:12px;transition:all .25s;
+}
+.member-item.added{
+  border-color:var(--teal);background:rgba(28,110,92,.05);
+}
+.member-item.is-you{
+  border-color:var(--gold);background:rgba(184,160,51,.06);
+}
+.member-name{
+  font-size:.92rem;font-weight:400;color:var(--navy);
+  display:flex;align-items:center;gap:8px;
+}
+.member-name .you-badge{
+  font-size:.65rem;font-weight:600;color:var(--gold);
+  background:rgba(184,160,51,.12);padding:2px 8px;border-radius:8px;
+  text-transform:uppercase;letter-spacing:.5px;
+}
+.member-name .attending-badge{
+  font-size:.65rem;font-weight:600;color:var(--teal);
+  background:rgba(28,110,92,.1);padding:2px 8px;border-radius:8px;
+}
+.btn-add,.btn-remove{
+  padding:6px 14px;border:none;border-radius:10px;
+  font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;
+  cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:4px;
+}
+.btn-add{
+  background:var(--sage-light);color:var(--teal);border:1.5px solid var(--sage);
+}
+.btn-add:hover{background:var(--teal);color:var(--cream);border-color:var(--teal)}
+.btn-remove{
+  background:rgba(196,45,45,.08);color:var(--kiki-red);border:1.5px solid rgba(196,45,45,.2);
+}
+.btn-remove:hover{background:var(--kiki-red);color:var(--cream)}
+
+/* Attending/declining toggle for the main person */
+.attendance-toggle{margin-bottom:16px}
+.radio-group{display:flex;gap:10px;flex-wrap:wrap}
+.radio-group label{display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:400;font-size:.92rem;text-transform:none;letter-spacing:0;padding:10px 20px;border:1.5px solid var(--sage);border-radius:12px;transition:all .2s;color:var(--navy)}
+.radio-group label:has(input:checked){border-color:var(--kiki-red);background:rgba(196,45,45,.06);color:var(--kiki-red-deep)}
+.radio-group input{display:none}
+
+.btn-submit{
+  display:inline-flex;align-items:center;gap:8px;padding:14px 38px;
+  background:var(--teal);color:var(--cream);border:none;border-radius:14px;
+  font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
+  cursor:pointer;transition:all .3s;letter-spacing:.3px;box-shadow:0 4px 16px rgba(28,110,92,.2);
+}
+.btn-submit:hover{background:var(--teal-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(28,110,92,.25)}
+.btn-submit:active{transform:translateY(0)}
+.btn-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* ═══ LETTER FOLD & FLY ANIMATION ═══ */
+.fly-overlay{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:transparent;pointer-events:none;
+}
+.fly-overlay.active{display:block}
+
+.letter-wrapper{
+  position:fixed;top:50%;left:50%;z-index:10000;
+  transform:translate(-50%,-50%);
+  width:320px;pointer-events:none;
+  perspective:800px;
+}
+.letter-paper{
+  width:100%;height:220px;
+  background:var(--cream);
+  border:1.5px solid var(--sage);
+  border-radius:8px;
+  box-shadow:0 4px 30px rgba(42,53,85,.15);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  color:var(--navy);font-size:1rem;
+  text-align:center;padding:20px;
+  line-height:1.5;
+  transform-origin:center center;
+}
+.envelope-back{
+  width:100%;height:160px;
+  background:var(--blush-light);
+  border:1.5px solid var(--blush);
+  border-radius:8px;
+  position:absolute;bottom:0;left:0;
+  box-shadow:0 4px 20px rgba(42,53,85,.1);
+  opacity:0;
+}
+.envelope-flap{
+  width:100%;height:80px;
+  position:absolute;top:0;left:0;
+  transform-origin:top center;
+  opacity:0;
+}
+.envelope-flap polygon{fill:var(--blush-light);stroke:var(--blush);stroke-width:1.5}
+.envelope-seal{
+  position:absolute;top:60px;left:50%;transform:translateX(-50%);
+  width:28px;height:28px;background:var(--kiki-red);border-radius:50%;
+  opacity:0;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+}
+.envelope-seal::after{
+  content:'M&Z';font-family:'Cormorant Garamond',serif;
+  font-size:.5rem;color:var(--cream);font-weight:600;letter-spacing:.5px;
+}
+
+/* Keyframes for the sequence */
+@keyframes paper-shrink{
+  0%{transform:scale(1);opacity:1}
+  100%{transform:scale(.85) translateY(10px);opacity:1}
+}
+@keyframes paper-fold-top{
+  0%{transform:rotateX(0deg)}
+  100%{transform:rotateX(180deg)}
+}
+@keyframes envelope-appear{
+  0%{opacity:0;transform:translateY(20px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+@keyframes seal-stamp{
+  0%{opacity:0;transform:translateX(-50%) scale(2)}
+  60%{opacity:1;transform:translateX(-50%) scale(.9)}
+  100%{opacity:1;transform:translateX(-50%) scale(1)}
+}
+@keyframes fly-away{
+  0%{transform:translate(-50%,-50%) rotate(0deg) scale(1);opacity:1}
+  30%{transform:translate(-50%,-70%) rotate(-8deg) scale(.9);opacity:1}
+  60%{transform:translate(20%,-120%) rotate(-15deg) scale(.6);opacity:.8}
+  100%{transform:translate(80%,-250%) rotate(-20deg) scale(.3);opacity:0}
+}
+
+.letter-wrapper.phase-shrink .letter-paper{
+  animation:paper-shrink .6s ease-in-out forwards;
+}
+.letter-wrapper.phase-envelope .envelope-back{
+  animation:envelope-appear .4s ease-out forwards;
+}
+.letter-wrapper.phase-envelope .envelope-flap{
+  opacity:1;
+}
+.letter-wrapper.phase-seal .envelope-seal{
+  animation:seal-stamp .3s ease-out forwards;
+}
+.letter-wrapper.phase-fly{
+  animation:fly-away 1.4s ease-in forwards;
+}
+
+/* Success screen */
+.success-screen{
+  display:none;position:fixed;inset:0;z-index:9998;
+  background:linear-gradient(180deg,var(--sky-pale),var(--cream));
+  flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px;
+  animation:fadeUp .6s ease-out;
+}
+.success-screen.show{display:flex}
+.success-screen h3{
+  font-family:'Cormorant Garamond',serif;font-size:2rem;
+  color:var(--teal);margin-bottom:10px;
+}
+.success-screen p{
+  font-weight:300;font-size:1rem;line-height:1.7;color:var(--navy-light);
+  max-width:400px;
+}
+.success-screen .success-cat{margin-bottom:20px;opacity:.6}
+.success-screen .back-btn{
+  margin-top:24px;padding:10px 28px;background:none;
+  border:1.5px solid var(--teal);border-radius:12px;
+  font-family:'DM Sans',sans-serif;font-size:.88rem;
+  color:var(--teal);cursor:pointer;transition:all .2s;
+}
+.success-screen .back-btn:hover{background:var(--teal);color:var(--cream)}
+
+.cat-divider{text-align:center;margin:8px 0 16px;opacity:.45}
+
+/* ═══ REGISTRY CARD ═══ */
+.registry-card{
+  background:var(--warm-white);border-radius:20px;padding:36px 28px;margin-bottom:22px;
+  box-shadow:0 2px 24px var(--shadow),0 0 0 1px rgba(28,110,92,.04);
+  animation:fadeUp .8s ease-out both;animation-delay:.5s;
+  border-top:3px solid var(--gold);
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+.registry-card::after{
+  content:'';position:absolute;bottom:-1px;left:-1px;width:90px;height:90px;
+  background:linear-gradient(315deg,transparent 50%,var(--sage-light) 50%);
+  border-radius:0 0 0 20px;opacity:.3;
+}
+.registry-card .card-header{display:flex;align-items:center;gap:12px;margin-bottom:6px;justify-content:center}
+.registry-card .card-header .card-icon{width:36px;height:36px;flex-shrink:0}
+.registry-card .card-header h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.4rem;color:var(--navy)}
+.registry-card p{line-height:1.75;font-weight:300;font-size:.92rem;margin-bottom:0;color:var(--navy-light)}
+
+/* Gift link box */
+.registry-link{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:18px 36px;
+  background:linear-gradient(135deg,var(--cream) 0%,var(--sage-light) 100%);
+  border:2px solid var(--sage);
+  border-radius:16px;
+  text-decoration:none;color:var(--navy);
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;
+  transition:all .35s ease;
+  position:relative;z-index:1;
+  box-shadow:0 3px 12px rgba(42,53,85,.06);
+}
+.registry-link:hover{
+  border-color:var(--gold);
+  background:linear-gradient(135deg,#faf5e8 0%,#f0ead4 100%);
+  transform:translateY(-3px);
+  box-shadow:0 8px 28px rgba(184,160,51,.15);
+}
+.registry-link:active{transform:translateY(0)}
+
+/* Animated gift scene */
+.gift-scene{
+  position:relative;height:110px;margin:10px auto 20px;
+  width:220px;
+}
+.gift-box{
+  position:absolute;left:50%;bottom:0;
+  transform:translateX(-50%);
+  animation:gift-bob 3s ease-in-out infinite;
+}
+@keyframes gift-bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-6px)}}
+
+/* Sparkles */
+.sparkle{
+  position:absolute;opacity:0;
+  animation:sparkle-pop 2.5s ease-in-out infinite;
+}
+@keyframes sparkle-pop{
+  0%,100%{opacity:0;transform:scale(.5)}
+  30%{opacity:1;transform:scale(1.1)}
+  60%{opacity:.7;transform:scale(1)}
+  90%{opacity:0;transform:scale(.6) translateY(-8px)}
+}
+
+/* Cat peeking behind gift */
+.gift-cat{
+  position:absolute;bottom:0;left:50%;
+  transform:translateX(30px);
+  animation:cat-peek 4s ease-in-out infinite;
+}
+@keyframes cat-peek{
+  0%,100%{transform:translateX(30px) translateY(10px)}
+  40%,60%{transform:translateX(30px) translateY(0px)}
+}
+
+/* ═══ COLOR PALETTE CARD ═══ */
+.palette-card{
+  background:var(--warm-white);border-radius:20px;padding:36px 28px;margin-bottom:22px;
+  box-shadow:0 2px 24px var(--shadow),0 0 0 1px rgba(28,110,92,.04);
+  animation:fadeUp .8s ease-out both;animation-delay:.6s;
+  text-align:center;position:relative;overflow:hidden;
+}
+.palette-card .card-header{display:flex;align-items:center;gap:12px;margin-bottom:6px;justify-content:center}
+.palette-card .card-header .card-icon{width:36px;height:36px;flex-shrink:0}
+.palette-card .card-header h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.4rem;color:var(--navy)}
+.palette-card p{line-height:1.75;font-weight:300;font-size:.92rem;margin-bottom:16px;color:var(--navy-light)}
+
+.palette-swatches{
+  display:flex;justify-content:center;gap:16px;margin:20px 0 8px;
+  flex-wrap:wrap;
+}
+.swatch{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  animation:swatch-pop .5s ease-out both;
+}
+.swatch:nth-child(1){animation-delay:.7s}
+.swatch:nth-child(2){animation-delay:.85s}
+.swatch:nth-child(3){animation-delay:1s}
+.swatch:nth-child(4){animation-delay:1.15s}
+@keyframes swatch-pop{0%{opacity:0;transform:translateY(12px) scale(.8)}100%{opacity:1;transform:translateY(0) scale(1)}}
+
+.swatch-circle{
+  width:72px;height:72px;border-radius:50%;
+  box-shadow:0 3px 12px rgba(0,0,0,.1),inset 0 -2px 6px rgba(0,0,0,.05);
+  transition:transform .3s,box-shadow .3s;
+  position:relative;
+}
+.swatch-circle:hover{
+  transform:scale(1.1);
+  box-shadow:0 6px 20px rgba(0,0,0,.15);
+}
+/* little shine on swatches */
+.swatch-circle::after{
+  content:'';position:absolute;top:10px;left:16px;
+  width:14px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,.35);transform:rotate(-30deg);
+}
+.swatch-name{
+  font-family:'Cormorant Garamond',serif;font-size:.88rem;
+  font-weight:500;color:var(--navy);
+}
+.swatch-hex{
+  font-size:.7rem;font-weight:400;color:var(--brown);
+  letter-spacing:.5px;margin-top:-4px;
+}
+
+/* Hanging clothesline decoration */
+.clothesline{
+  position:relative;width:100%;height:60px;margin:8px 0 16px;
+}
+.clothesline-wire{
+  position:absolute;top:8px;left:10%;right:10%;height:0;
+  border-top:1.5px dashed var(--sage);
+}
+.hanging-item{
+  position:absolute;top:8px;
+  animation:swing 3s ease-in-out infinite alternate;
+  transform-origin:top center;
+}
+@keyframes swing{0%{transform:rotate(-3deg)}100%{transform:rotate(3deg)}}
+
+.footer{text-align:center;padding:30px 0 20px;font-weight:300;font-size:.76rem;color:var(--blush);letter-spacing:1.5px}
+
+@media(max-width:500px){
+  .sky-scene{min-height:420px}
+  .page-wrapper{padding:0 14px 40px;margin-top:-40px}
+  .card{padding:24px 18px}
+  .hero-text{bottom:65px}
+  .flyer svg{width:120px}
+  .cat-companion svg{width:22px}
+  .letter-wrapper{width:260px}
+  .letter-paper{height:180px;font-size:.88rem}
+  .guest-entry{grid-template-columns:1fr}
+  .registry-link{padding:14px 24px;font-size:1rem}
+  .gift-scene{width:180px;height:100px}
+  .swatch-circle{width:58px;height:58px}
+  .palette-swatches{gap:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ SKY SCENE ═══ -->
+<div class="sky-scene">
+  <svg class="s-cloud" style="top:8%;animation-duration:45s" width="200" height="55" viewBox="0 0 200 55"><ellipse cx="100" cy="35" rx="90" ry="20" fill="white" opacity=".8"/><ellipse cx="65" cy="25" rx="45" ry="20" fill="white" opacity=".9"/><ellipse cx="140" cy="22" rx="50" ry="22" fill="white" opacity=".85"/></svg>
+  <svg class="s-cloud" style="top:18%;animation-duration:60s;animation-delay:-22s;opacity:.5" width="160" height="45" viewBox="0 0 160 45"><ellipse cx="80" cy="28" rx="70" ry="17" fill="white" opacity=".8"/><ellipse cx="50" cy="20" rx="38" ry="16" fill="white" opacity=".9"/><ellipse cx="115" cy="18" rx="40" ry="18" fill="white"/></svg>
+  <svg class="s-cloud" style="top:5%;animation-duration:70s;animation-delay:-40s;opacity:.4" width="140" height="40" viewBox="0 0 140 40"><ellipse cx="70" cy="25" rx="60" ry="15" fill="white"/><ellipse cx="45" cy="18" rx="32" ry="14" fill="white"/><ellipse cx="100" cy="16" rx="35" ry="16" fill="white"/></svg>
+
+  <svg class="bird" style="top:15%;left:10%;animation-delay:-2s;animation-duration:14s" width="20" height="10" viewBox="0 0 20 10"><path d="M0,5 Q5,0 10,5 Q15,0 20,5" stroke="var(--navy)" stroke-width="1.2" fill="none" opacity=".3"/></svg>
+  <svg class="bird" style="top:20%;left:5%;animation-delay:-5s;animation-duration:16s" width="16" height="8" viewBox="0 0 16 8"><path d="M0,4 Q4,0 8,4 Q12,0 16,4" stroke="var(--navy)" stroke-width="1" fill="none" opacity=".25"/></svg>
+  <svg class="bird" style="top:12%;left:15%;animation-delay:-8s;animation-duration:18s" width="14" height="7" viewBox="0 0 14 7"><path d="M0,3.5 Q3.5,0 7,3.5 Q10.5,0 14,3.5" stroke="var(--navy)" stroke-width="1" fill="none" opacity=".2"/></svg>
+
+  <!-- Flying figure -->
+  <svg class="flyer" width="160" height="100" viewBox="0 0 160 100">
+    <line x1="20" y1="55" x2="140" y2="48" stroke="var(--brown)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M135,48 Q150,38 155,42 Q158,46 155,52 Q150,58 140,54 Q148,50 145,46Z" fill="var(--gold)" opacity=".8"/>
+    <path d="M138,47 Q152,40 156,45" stroke="var(--brown)" stroke-width="1" fill="none" opacity=".5"/>
+    <path d="M55,36 Q50,50 42,65 Q55,68 70,65 Q65,50 60,36Z" fill="var(--navy)"/>
+    <line x1="50" y1="62" x2="46" y2="75" stroke="var(--blush)" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="58" y1="63" x2="62" y2="74" stroke="var(--blush)" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="44" cy="76" rx="4" ry="2.5" fill="var(--kiki-red)"/>
+    <ellipse cx="63" cy="75" rx="4" ry="2.5" fill="var(--kiki-red)"/>
+    <circle cx="57" cy="30" r="11" fill="var(--blush-light)"/>
+    <path d="M46,28 Q47,18 57,17 Q67,18 68,28 Q67,24 57,23 Q47,24 46,28Z" fill="var(--brown)"/>
+    <path d="M48,30 Q46,26 47,22" stroke="var(--brown)" stroke-width="2" fill="none"/>
+    <path d="M52,20 Q45,12 48,18 Q44,14 50,20Z" fill="var(--kiki-red)"/>
+    <path d="M52,20 Q58,12 56,18 Q60,14 54,20Z" fill="var(--kiki-red)"/>
+    <circle cx="52" cy="20" r="2" fill="var(--kiki-red-deep)"/>
+    <line x1="52" y1="42" x2="45" y2="54" stroke="var(--blush)" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="68" cy="56" rx="8" ry="6" fill="var(--blush)"/>
+    <path d="M62,52 Q68,48 74,52" stroke="var(--brown)" stroke-width="1.5" fill="none"/>
+  </svg>
+
+  <!-- Black cat -->
+  <svg class="cat-companion" width="28" height="28" viewBox="0 0 28 28">
+    <ellipse cx="14" cy="20" rx="7" ry="8" fill="#1a1a1a"/><circle cx="14" cy="10" r="6" fill="#1a1a1a"/>
+    <polygon points="8,7 10,1 12,6" fill="#1a1a1a"/><polygon points="16,6 18,1 20,7" fill="#1a1a1a"/>
+    <ellipse cx="11.5" cy="10" rx="1.5" ry="1.8" fill="#f0e060"/><ellipse cx="16.5" cy="10" rx="1.5" ry="1.8" fill="#f0e060"/>
+    <ellipse cx="11.5" cy="10.3" rx=".7" ry="1.2" fill="#1a1a1a"/><ellipse cx="16.5" cy="10.3" rx=".7" ry="1.2" fill="#1a1a1a"/>
+    <path d="M20,22 Q26,18 24,12" stroke="#1a1a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <!-- Town skyline -->
+  <svg class="town" viewBox="0 0 1200 180" preserveAspectRatio="none" width="100%" height="180">
+    <path d="M0,120 Q150,60 300,90 Q500,50 700,80 Q900,55 1050,75 Q1150,65 1200,80 L1200,180 L0,180Z" fill="var(--fern)" opacity=".3"/>
+    <path d="M0,140 Q100,100 250,115 Q400,90 550,110 Q700,85 850,105 Q1000,90 1100,100 L1200,95 L1200,180 L0,180Z" fill="var(--fern)" opacity=".5"/>
+    <rect x="80" y="95" width="35" height="85" rx="1" fill="var(--blush-light)"/><rect x="80" y="90" width="35" height="8" fill="var(--kiki-red)" opacity=".5"/>
+    <rect x="170" y="85" width="28" height="95" rx="1" fill="var(--sage)"/>
+    <rect x="250" y="100" width="40" height="80" rx="1" fill="#e8ddd0"/>
+    <rect x="350" y="88" width="32" height="92" rx="1" fill="var(--lavender)" opacity=".7"/>
+    <rect x="450" y="95" width="45" height="85" rx="1" fill="var(--blush-light)"/>
+    <rect x="550" y="55" width="30" height="125" rx="1" fill="var(--sage)"/>
+    <polygon points="550,55 565,30 580,55" fill="var(--teal)" opacity=".7"/>
+    <circle cx="565" cy="72" r="8" fill="var(--cream)" stroke="var(--navy)" stroke-width="1" opacity=".6"/>
+    <rect x="640" y="100" width="38" height="80" rx="1" fill="#ddd5c5"/>
+    <rect x="730" y="90" width="30" height="90" rx="1" fill="var(--blush-light)"/>
+    <rect x="820" y="98" width="42" height="82" rx="1" fill="var(--sage)"/>
+    <rect x="920" y="88" width="35" height="92" rx="1" fill="var(--lavender)" opacity=".6"/>
+    <rect x="1010" y="95" width="28" height="85" rx="1" fill="#e8ddd0"/>
+    <rect x="1100" y="102" width="40" height="78" rx="1" fill="var(--blush-light)"/>
+    <g fill="var(--sky-pale)" opacity=".6">
+      <rect x="88" y="102" width="6" height="7" rx="1"/><rect x="100" y="102" width="6" height="7" rx="1"/>
+      <rect x="88" y="115" width="6" height="7" rx="1"/><rect x="100" y="115" width="6" height="7" rx="1"/>
+      <rect x="176" y="92" width="5" height="6" rx="1"/><rect x="186" y="92" width="5" height="6" rx="1"/>
+      <rect x="176" y="104" width="5" height="6" rx="1"/>
+      <rect x="258" y="108" width="6" height="7" rx="1"/><rect x="270" y="108" width="6" height="7" rx="1"/>
+      <rect x="460" y="102" width="6" height="7" rx="1"/><rect x="474" y="102" width="6" height="7" rx="1"/>
+      <rect x="460" y="115" width="6" height="7" rx="1"/>
+      <rect x="648" y="108" width="6" height="7" rx="1"/><rect x="660" y="108" width="6" height="7" rx="1"/>
+      <rect x="738" y="98" width="5" height="6" rx="1"/><rect x="748" y="98" width="5" height="6" rx="1"/>
+      <rect x="828" y="106" width="6" height="7" rx="1"/><rect x="842" y="106" width="6" height="7" rx="1"/>
+      <rect x="928" y="96" width="5" height="6" rx="1"/><rect x="938" y="96" width="5" height="6" rx="1"/>
+    </g>
+    <polygon points="250,100 270,82 290,100" fill="var(--kiki-red)" opacity=".35"/>
+    <polygon points="640,100 659,84 678,100" fill="var(--kiki-red)" opacity=".3"/>
+    <polygon points="820,98 841,80 862,98" fill="var(--teal)" opacity=".25"/>
+    <polygon points="1100,102 1120,88 1140,102" fill="var(--kiki-red)" opacity=".3"/>
+    <path d="M0,155 Q200,148 400,152 Q600,145 800,150 Q1000,146 1200,150 L1200,180 L0,180Z" fill="var(--sky)" opacity=".35"/>
+    <path d="M0,162 Q300,155 600,160 Q900,154 1200,158 L1200,180 L0,180Z" fill="var(--sky)" opacity=".2"/>
+    <circle cx="130" cy="130" r="15" fill="var(--fern)" opacity=".6"/><circle cx="145" cy="125" r="12" fill="var(--fern-light)" opacity=".5"/>
+    <circle cx="400" cy="128" r="14" fill="var(--fern)" opacity=".5"/><circle cx="415" cy="124" r="11" fill="var(--fern-light)" opacity=".4"/>
+    <circle cx="700" cy="130" r="13" fill="var(--fern)" opacity=".55"/>
+    <circle cx="960" cy="128" r="16" fill="var(--fern)" opacity=".5"/><circle cx="978" cy="123" r="12" fill="var(--fern-light)" opacity=".4"/>
+  </svg>
+
+  <div class="hero-text">
+    <p class="hero-tag"> You're Invited ! </p>
+    <h1 class="hero-names">Maria <span class="amp">&</span> Zuhayr</h1>
+    <p class="hero-date-line">November 8, 2026 · Four in the Afternoon</p>
+  </div>
+</div>
+
+<!-- Floating envelopes -->
+<script>
+for(let i=0;i<4;i++){
+  const e=document.createElement('div');e.className='floating-envelope';
+  e.style.left=(8+Math.random()*80)+'vw';e.style.top=(25+Math.random()*55)+'vh';
+  e.style.animationDelay=(-Math.random()*16)+'s';e.style.animationDuration=(14+Math.random()*8)+'s';
+  const s=20+Math.random()*16;
+  e.innerHTML=`<svg width="${s}" height="${s*.65}" viewBox="0 0 40 26"><rect x="1" y="1" width="38" height="24" rx="3" fill="var(--cream)" stroke="var(--blush)" stroke-width="1.5"/><path d="M1,1 L20,15 L39,1" stroke="var(--kiki-red)" stroke-width="1" fill="none" opacity=".5"/><circle cx="33" cy="6" r="3" fill="var(--kiki-red)" opacity=".3"/></svg>`;
+  document.body.appendChild(e);
+}
+</script>
+
+<!-- ═══ MAIN CONTENT ═══ -->
+<div class="page-wrapper" id="main-content">
+
+  <!-- Details -->
+  <div class="card">
+    <div class="card-header">
+      <svg class="card-icon" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" stroke="var(--teal)" stroke-width="1.5" opacity=".4"/><path d="M18,10 L18,19 L24,22" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"/></svg>
+      <h2>The Details</h2>
+    </div>
+    <div class="details-list">
+      <div class="detail-row"><span class="d-label">Date</span><span class="d-value">Sunday, November 8, 2026</span></div>
+      <div class="detail-row"><span class="d-label">Time</span><span class="d-value">4:00 in the Afternoon</span></div>
+      <div class="detail-row"><span class="d-label">Venue</span><span class="d-value">Bella Rose<br>1380 S. Price Road, Chandler, AZ 85286</span></div>
+      <div class="detail-row"><span class="d-label">After</span><span class="d-value">Reception to follow</span></div>
+    </div>
+    <div class="bakery-deco">
+      <svg width="28" height="28" viewBox="0 0 28 28"><ellipse cx="14" cy="18" rx="10" ry="8" fill="var(--blush)"/><ellipse cx="14" cy="12" rx="8" ry="6" fill="var(--blush-light)"/><path d="M10,10 Q14,4 18,10" stroke="var(--gold)" stroke-width="1" fill="none"/></svg>
+      <svg width="28" height="28" viewBox="0 0 28 28"><rect x="8" y="10" width="12" height="14" rx="2" fill="var(--blush)"/><rect x="6" y="8" width="16" height="4" rx="2" fill="var(--blush-light)"/><path d="M14,8 L14,4" stroke="var(--fern)" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="3" r="1.5" fill="var(--fern)"/></svg>
+      <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6,22 Q6,10 14,8 Q22,10 22,22Z" fill="var(--blush-light)"/><path d="M10,18 Q14,14 18,18" stroke="var(--gold)" stroke-width=".8" fill="none" opacity=".5"/></svg>
+    </div>
+  </div>
+
+  <!-- Story -->
+  <div class="card">
+    <div class="card-header">
+      <svg class="card-icon" viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="28" height="20" rx="3" stroke="var(--kiki-red)" stroke-width="1.5" opacity=".5"/><path d="M4,8 L18,20 L32,8" stroke="var(--kiki-red)" stroke-width="1.5" opacity=".5"/></svg>
+      <h2>A Special Delivery</h2>
+    </div>
+    <p>Some deliveries change everything. Ours brought two hearts together across the skies and now we're ready to begin the greatest adventure of all.</p>
+    <p>Consider this your very own special delivery: an invitation to celebrate with us as we start our new life together.</p>
+    <div class="cat-divider">
+      <svg width="50" height="30" viewBox="0 0 50 30"><ellipse cx="25" cy="22" rx="10" ry="8" fill="var(--navy)"/><circle cx="25" cy="12" r="7" fill="var(--navy)"/><polygon points="18,9 21,2 23,8" fill="var(--navy)"/><polygon points="27,8 29,2 32,9" fill="var(--navy)"/><ellipse cx="22" cy="12" rx="1.5" ry="2" fill="#f0e060"/><ellipse cx="28" cy="12" rx="1.5" ry="2" fill="#f0e060"/><path d="M34,24 Q40,18 38,12" stroke="var(--navy)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+  <!-- RSVP -->
+  <div class="card rsvp-card" id="rsvp">
+    <div class="card-header">
+      <svg class="card-icon" viewBox="0 0 36 36" fill="none"><path d="M6,28 L6,8 Q6,5 9,5 L27,5 Q30,5 30,8 L30,28" stroke="var(--teal)" stroke-width="1.5" opacity=".5"/><path d="M6,28 L18,20 L30,28" stroke="var(--teal)" stroke-width="1.5" fill="var(--sage-light)" opacity=".3"/><path d="M14,14 L22,14 M14,18 L20,18" stroke="var(--teal)" stroke-width="1" opacity=".4" stroke-linecap="round"/></svg>
+      <h2>RSVP</h2>
+    </div>
+    <p style="margin-bottom:18px;font-size:.85rem;color:var(--brown)">Enter your name exactly as it appears on your invitation to find your party.</p>
+
+    <div id="rsvp-form">
+      <!-- Step 1: Name lookup -->
+      <div id="lookup-step">
+        <div class="form-row">
+          <label>Your Full Name *</label>
+          <div class="lookup-row">
+            <input type="text" id="name-input" placeholder="e.g. Maria Gonzales" autocomplete="off">
+            <button type="button" class="btn-lookup" id="btn-find">Find Me</button>
+          </div>
+        </div>
+        <div class="lookup-msg" id="lookup-msg"></div>
+      </div>
+
+      <!-- Step 2: Group & attendance (hidden until found) -->
+      <div class="group-panel" id="group-panel">
+        <div class="attendance-toggle form-row">
+          <label>Will you be attending? *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="attending" value="yes"> Joyfully Accepts</label>
+            <label><input type="radio" name="attending" value="no"> Regretfully Declines</label>
+          </div>
+        </div>
+
+        <p class="group-title">Your Party</p>
+        <p style="font-size:.82rem;color:var(--brown);margin-bottom:12px;font-weight:300">Add the members of your party who will be attending with you.</p>
+        <div class="member-list" id="member-list"></div>
+
+        <div class="form-row">
+          <label>Phone Number</label>
+          <input type="tel" id="rsvp-phone" placeholder="(555) 123-4567">
+        </div>
+        <div class="form-row">
+          <label>Additional Notes</label>
+          <textarea id="rsvp-notes" placeholder=""></textarea>
+        </div>
+        <button type="button" class="btn-submit" id="btn-submit-rsvp">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><rect x="1" y="1" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M1,1 L9,8 L17,1" stroke="currentColor" stroke-width="1.2"/></svg>
+          Send RSVP
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registry -->
+  <div class="registry-card">
+    <div class="card-header">
+      <svg class="card-icon" viewBox="0 0 36 36" fill="none">
+        <rect x="6" y="14" width="24" height="18" rx="3" stroke="var(--gold)" stroke-width="1.5" opacity=".6"/>
+        <rect x="6" y="14" width="24" height="6" rx="2" stroke="var(--gold)" stroke-width="1.5" fill="var(--sage-light)" opacity=".3"/>
+        <line x1="18" y1="14" x2="18" y2="32" stroke="var(--kiki-red)" stroke-width="1.5" opacity=".4"/>
+        <path d="M18,14 Q12,8 14,5 Q16,3 18,6 Q20,3 22,5 Q24,8 18,14Z" fill="var(--kiki-red)" opacity=".5"/>
+      </svg>
+      <h2>Our Registry</h2>
+    </div>
+    <p>Your presence is the greatest gift, but if you'd like to help us build our new home together, we've created a registry.</p>
+
+    <!-- Animated gift scene -->
+    <div class="gift-scene">
+      <!-- Sparkles -->
+      <svg class="sparkle" style="top:10px;left:30px;animation-delay:0s" width="12" height="12" viewBox="0 0 12 12"><path d="M6,0 L7,4.5 L12,6 L7,7.5 L6,12 L5,7.5 L0,6 L5,4.5Z" fill="var(--gold)" opacity=".7"/></svg>
+      <svg class="sparkle" style="top:5px;right:35px;animation-delay:.8s" width="10" height="10" viewBox="0 0 10 10"><path d="M5,0 L6,3.5 L10,5 L6,6.5 L5,10 L4,6.5 L0,5 L4,3.5Z" fill="var(--kiki-red)" opacity=".5"/></svg>
+      <svg class="sparkle" style="top:30px;left:15px;animation-delay:1.6s" width="8" height="8" viewBox="0 0 8 8"><path d="M4,0 L5,3 L8,4 L5,5 L4,8 L3,5 L0,4 L3,3Z" fill="var(--fern)" opacity=".6"/></svg>
+      <svg class="sparkle" style="top:20px;right:18px;animation-delay:1.2s" width="9" height="9" viewBox="0 0 9 9"><path d="M4.5,0 L5.5,3 L9,4.5 L5.5,6 L4.5,9 L3.5,6 L0,4.5 L3.5,3Z" fill="var(--sky-deep)" opacity=".5"/></svg>
+      <svg class="sparkle" style="top:50px;left:40px;animation-delay:2s" width="7" height="7" viewBox="0 0 7 7"><path d="M3.5,0 L4.2,2.5 L7,3.5 L4.2,4.5 L3.5,7 L2.8,4.5 L0,3.5 L2.8,2.5Z" fill="var(--gold)" opacity=".6"/></svg>
+
+      <!-- Gift box SVG -->
+      <svg class="gift-box" width="70" height="80" viewBox="0 0 70 80">
+        <!-- Box body -->
+        <rect x="5" y="30" width="60" height="45" rx="4" fill="var(--sage)" stroke="var(--teal)" stroke-width="1.5"/>
+        <!-- Box lid -->
+        <rect x="2" y="22" width="66" height="12" rx="4" fill="var(--sage-light)" stroke="var(--teal)" stroke-width="1.5"/>
+        <!-- Ribbon vertical -->
+        <rect x="30" y="22" width="10" height="53" fill="var(--kiki-red)" opacity=".7" rx="1"/>
+        <!-- Ribbon horizontal -->
+        <rect x="2" y="24" width="66" height="8" fill="var(--kiki-red)" opacity=".5" rx="1"/>
+        <!-- Bow -->
+        <g transform="translate(35,22)">
+          <path d="M0,0 Q-16,-14 -10,-18 Q-5,-20 0,-8Z" fill="var(--kiki-red)" opacity=".85"/>
+          <path d="M0,0 Q16,-14 10,-18 Q5,-20 0,-8Z" fill="var(--kiki-red)" opacity=".85"/>
+          <circle cx="0" cy="-2" r="4" fill="var(--kiki-red-deep)"/>
+        </g>
+        <!-- Decorative pattern on box -->
+        <circle cx="20" cy="50" r="3" fill="var(--teal)" opacity=".15"/>
+        <circle cx="50" cy="55" r="2.5" fill="var(--teal)" opacity=".15"/>
+        <circle cx="18" cy="62" r="2" fill="var(--teal)" opacity=".1"/>
+        <circle cx="52" cy="44" r="2" fill="var(--teal)" opacity=".1"/>
+      </svg>
+
+      <!-- Cat peeking from behind -->
+      <svg class="gift-cat" width="36" height="45" viewBox="0 0 36 45">
+        <ellipse cx="18" cy="36" rx="12" ry="9" fill="#1a1a1a"/>
+        <circle cx="18" cy="20" r="10" fill="#1a1a1a"/>
+        <!-- ears -->
+        <polygon points="9,14 12,3 15,12" fill="#1a1a1a"/>
+        <polygon points="21,12 24,3 27,14" fill="#1a1a1a"/>
+        <!-- eyes -->
+        <ellipse cx="14" cy="19" rx="2" ry="2.5" fill="#f0e060"/>
+        <ellipse cx="22" cy="19" rx="2" ry="2.5" fill="#f0e060"/>
+        <ellipse cx="14" cy="19.5" rx="1" ry="1.8" fill="#1a1a1a"/>
+        <ellipse cx="22" cy="19.5" rx="1" ry="1.8" fill="#1a1a1a"/>
+        <!-- nose -->
+        <ellipse cx="18" cy="23" rx="1.2" ry=".8" fill="#444"/>
+        <!-- whiskers -->
+        <line x1="6" y1="21" x2="13" y2="22" stroke="#444" stroke-width=".6" opacity=".4"/>
+        <line x1="6" y1="24" x2="13" y2="23.5" stroke="#444" stroke-width=".6" opacity=".4"/>
+        <line x1="23" y1="22" x2="30" y2="21" stroke="#444" stroke-width=".6" opacity=".4"/>
+        <line x1="23" y1="23.5" x2="30" y2="24" stroke="#444" stroke-width=".6" opacity=".4"/>
+        <!-- tail -->
+        <path d="M28,38 Q36,30 33,20" stroke="#1a1a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- paw on gift -->
+        <ellipse cx="8" cy="37" rx="4.5" ry="2.5" fill="#1a1a1a"/>
+      </svg>
+    </div>
+
+    <a href="https://www.amazon.com/wedding/guest-view/N16M52L0LLNE" target="_blank" rel="noopener" class="registry-link">
+      <!-- Gift icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5">
+        <rect x="3" y="10" width="18" height="12" rx="2"/>
+        <rect x="2" y="7" width="20" height="5" rx="2"/>
+        <line x1="12" y1="7" x2="12" y2="22"/>
+        <path d="M12,7 Q7,2 5,4 Q3,6 7,7" fill="none"/>
+        <path d="M12,7 Q17,2 19,4 Q21,6 17,7" fill="none"/>
+      </svg>
+      View Our Registry
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--navy)" stroke-width="1.5" opacity=".4">
+        <path d="M6,3 L11,8 L6,13" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Color Palette / Dress Code -->
+  <div class="palette-card">
+    <div class="card-header">
+      <svg class="card-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="12" cy="14" r="5" stroke="var(--blush)" stroke-width="1.5" opacity=".6"/>
+        <circle cx="24" cy="14" r="5" stroke="var(--lavender)" stroke-width="1.5" opacity=".6"/>
+        <circle cx="18" cy="22" r="5" stroke="var(--fern)" stroke-width="1.5" opacity=".6"/>
+        <circle cx="12" cy="14" r="3" fill="#FFADAF" opacity=".4"/>
+        <circle cx="24" cy="14" r="3" fill="#979EC2" opacity=".4"/>
+        <circle cx="18" cy="22" r="3" fill="#737F78" opacity=".4"/>
+      </svg>
+      <h2>Not Sure What To Wear?</h2>
+    </div>
+    <p>We'd love for our guests to dress in similar colors to match the magic of the day!</p>
+
+    <!-- Clothesline with little fabric swatches hanging -->
+    <div class="clothesline">
+      <div class="clothesline-wire"></div>
+      <!-- Hanging mini fabric pieces -->
+      <svg class="hanging-item" style="left:14%;animation-delay:0s" width="28" height="42" viewBox="0 0 28 42">
+        <line x1="14" y1="0" x2="14" y2="10" stroke="var(--brown)" stroke-width="1"/>
+        <polygon points="8,9 20,9 14,6" fill="var(--brown)" opacity=".5"/>
+        <rect x="4" y="10" width="20" height="28" rx="2" fill="#737F78"/>
+        <rect x="4" y="10" width="20" height="4" rx="1" fill="#737F78" opacity=".7"/>
+        <path d="M8,18 Q14,22 20,18" stroke="rgba(255,255,255,.15)" stroke-width="1" fill="none"/>
+      </svg>
+      <svg class="hanging-item" style="left:36%;animation-delay:-.8s" width="28" height="42" viewBox="0 0 28 42">
+        <line x1="14" y1="0" x2="14" y2="10" stroke="var(--brown)" stroke-width="1"/>
+        <polygon points="8,9 20,9 14,6" fill="var(--brown)" opacity=".5"/>
+        <rect x="4" y="10" width="20" height="28" rx="2" fill="#FABF98"/>
+        <rect x="4" y="10" width="20" height="4" rx="1" fill="#FABF98" opacity=".7"/>
+        <path d="M8,22 Q14,26 20,22" stroke="rgba(255,255,255,.15)" stroke-width="1" fill="none"/>
+      </svg>
+      <svg class="hanging-item" style="left:58%;animation-delay:-1.6s" width="28" height="42" viewBox="0 0 28 42">
+        <line x1="14" y1="0" x2="14" y2="10" stroke="var(--brown)" stroke-width="1"/>
+        <polygon points="8,9 20,9 14,6" fill="var(--brown)" opacity=".5"/>
+        <rect x="4" y="10" width="20" height="28" rx="2" fill="#FFADAF"/>
+        <rect x="4" y="10" width="20" height="4" rx="1" fill="#FFADAF" opacity=".7"/>
+        <path d="M8,20 Q14,24 20,20" stroke="rgba(255,255,255,.15)" stroke-width="1" fill="none"/>
+      </svg>
+      <svg class="hanging-item" style="left:78%;animation-delay:-2.4s" width="28" height="42" viewBox="0 0 28 42">
+        <line x1="14" y1="0" x2="14" y2="10" stroke="var(--brown)" stroke-width="1"/>
+        <polygon points="8,9 20,9 14,6" fill="var(--brown)" opacity=".5"/>
+        <rect x="4" y="10" width="20" height="28" rx="2" fill="#979EC2"/>
+        <rect x="4" y="10" width="20" height="4" rx="1" fill="#979EC2" opacity=".7"/>
+        <path d="M8,19 Q14,23 20,19" stroke="rgba(255,255,255,.15)" stroke-width="1" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- Color swatches -->
+    <div class="palette-swatches">
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#737F78"></div>
+        <span class="swatch-name">Sage Green</span>
+        <span class="swatch-hex">#737F78</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#FABF98"></div>
+        <span class="swatch-name">Peach</span>
+        <span class="swatch-hex">#FABF98</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#FFADAF"></div>
+        <span class="swatch-name">Blush Pink</span>
+        <span class="swatch-hex">#FFADAF</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:#979EC2"></div>
+        <span class="swatch-name">Lavender</span>
+        <span class="swatch-hex">#979EC2</span>
+      </div>
+    </div>
+
+    <!-- Cat divider -->
+    <div class="cat-divider" style="margin-top:16px">
+      <svg width="50" height="30" viewBox="0 0 50 30"><ellipse cx="25" cy="22" rx="10" ry="8" fill="var(--navy)"/><circle cx="25" cy="12" r="7" fill="var(--navy)"/><polygon points="18,9 21,2 23,8" fill="var(--navy)"/><polygon points="27,8 29,2 32,9" fill="var(--navy)"/><ellipse cx="22" cy="12" rx="1.5" ry="2" fill="#f0e060"/><ellipse cx="28" cy="12" rx="1.5" ry="2" fill="#f0e060"/><path d="M34,24 Q40,18 38,12" stroke="var(--navy)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+  <div class="footer">Maria & Zuhayr · 11.08.2026</div>
+</div>
+
+<!-- ═══ LETTER ANIMATION ELEMENTS ═══ -->
+<div class="fly-overlay" id="fly-overlay"></div>
+<div class="letter-wrapper" id="letter-wrapper" style="display:none">
+  <div class="letter-paper" id="letter-paper">
+    <div><em style="font-size:.8em;color:var(--brown)">RSVP from</em><br><span id="letter-name" style="font-size:1.3em;font-weight:500"></span><br><em style="font-size:.8em;color:var(--teal);margin-top:4px;display:inline-block">Joyfully Accepts!</em></div>
+  </div>
+  <div class="envelope-back"></div>
+  <svg class="envelope-flap" viewBox="0 0 320 80" width="320" height="80"><polygon points="0,0 160,70 320,0 320,2 160,72 0,2"/></svg>
+  <div class="envelope-seal"></div>
+</div>
+
+<!-- ═══ SUCCESS SCREEN ═══ -->
+<div class="success-screen" id="success-screen">
+  <svg class="success-cat" width="80" height="60" viewBox="0 0 80 60">
+    <ellipse cx="40" cy="42" rx="18" ry="16" fill="#1a1a1a"/>
+    <circle cx="40" cy="22" r="13" fill="#1a1a1a"/>
+    <polygon points="28,16 32,2 36,14" fill="#1a1a1a"/>
+    <polygon points="44,14 48,2 52,16" fill="#1a1a1a"/>
+    <ellipse cx="35" cy="22" rx="2.5" ry="3" fill="#f0e060"/>
+    <ellipse cx="45" cy="22" rx="2.5" ry="3" fill="#f0e060"/>
+    <ellipse cx="35" cy="22.5" rx="1.2" ry="2" fill="#1a1a1a"/>
+    <ellipse cx="45" cy="22.5" rx="1.2" ry="2" fill="#1a1a1a"/>
+    <path d="M55,48 Q68,38 64,26" stroke="#1a1a1a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- paws -->
+    <ellipse cx="32" cy="55" rx="5" ry="3" fill="#1a1a1a"/>
+    <ellipse cx="48" cy="55" rx="5" ry="3" fill="#1a1a1a"/>
+  </svg>
+  <h3>Delivery Complete!</h3>
+  <p>Your RSVP has been delivered safely.<br>We can't wait to celebrate with you!</p>
+  <button class="back-btn" onclick="location.reload()">Back to invitation</button>
+</div>
+
+<script>
+/* ═══ GUEST DATABASE ═══ */
+const GUEST_DB = [
+  {g:"G1", members:["Aqeel Shahid","Amber Shahid","Mehr Shahid","Kaam Shahid"]},
+  {g:"G2", members:["Annett Gonzales","Ruben Gonzales","Rihanna Gonzales","Mateo Gonzales","Maria Gonzales","Pablo"]},
+  {g:"G3", members:["Lulu Heavener","Gene Heavener"]},
+  {g:"G4", members:["Tata Pablo"]},
+  {g:"G5", members:["Trina Heavener-Baird","Ramsey Baird","Jayden Baird","Maddux Baird"]},
+  {g:"G6", members:["Chelsea Whitney","Chase Whitney","Luke Whitney"]},
+  {g:"G7", members:["Cheryl Heavener","Aunt Cheryl +1"]},
+  {g:"G8", members:["Tia Martha","Tia Martha +1"]},
+  {g:"G9", members:["Marylou Hurtado","Daniel Hurtado","Christian Hurtado","Madori Hurtado"]},
+  {g:"G10", members:["Pablo Gonzales","Yurica Gonzales","Pablito Parra","Javi Parra"]},
+  {g:"G11", members:["Consuelo Salas","Enrique Salas"]},
+  {g:"G12", members:["Rosa Gonzalez","Juan Gonzalez"]},
+  {g:"G13", members:["Jacqueline Lerma","Liliana Lerma"]},
+  {g:"G14", members:["Jacqueline Lerma","Liliana Lerma"]},
+  {g:"G15", members:["Javier Ramirez","Cristina Ramirez","Jacob Ramirez","Caleb Ramirez"]},
+  {g:"G16", members:["Danishel Hernandez","Ahmed","Dani Mom"]},
+  {g:"G17", members:["Raquel Caballero","Jolynn Ferland"]},
+  {g:"G18", members:["Elie Knight"]},
+  {g:"G19", members:["Erica Calderon","Gilbert Calderon","Bianca Calderon","Junior Calderon"]},
+  {g:"G20", members:["Marian Lalonde","Noe Flores"]},
+  {g:"G21", members:["Dori","Scott","Danny"]},
+  {g:"G22", members:["Maria Garcia"]},
+  {g:"G23", members:["Paul Gallego","Raul Gallego"]},
+  {g:"G24", members:["Derek Heavener","Kelly Heavener"]},
+  {g:"G25", members:["Emma De La Rosa"]},
+  {g:"G26", members:["Fahad Baig"]},
+  {g:"G27", members:["Mondarius Johnson","Preston Kydd"]},
+  {g:"G28", members:["Anzul Tirmizi","Elizabeth Tirmizi"]},
+  {g:"G29", members:["Tricia Trejo","Tricia Trejo +1"]},
+  {g:"G30", members:["Hunter Gardner"]},
+  {g:"G31", members:["Chase McCleary"]},
+  {g:"G32", members:["Anthony Manalo"]},
+  {g:"G33", members:["Elias Villa","Elias Villa +1"]},
+  {g:"G34", members:["Jimmy Jarvison","Jimmy Jarvison +1"]},
+  {g:"G35", members:["Justin Smith","Maria Smith"]},
+  {g:"G36", members:["Adam Trupp"]},
+  {g:"G37", members:["Hussein Shaban"]},
+  {g:"G38", members:["Ryan Oconnor","Ryan Oconnor +1"]},
+  {g:"G39", members:["Christian Delzatto"]},
+  {g:"G40", members:["Manny Banuelos"]},
+  {g:"G41", members:["Hunter Quinlan"]},
+  {g:"G42", members:["Ryan Sourignavong"]},
+  {g:"G43", members:["Nyles Bilavanh","Yuritzy Marquez"]},
+  {g:"G44", members:["Efren Acosta"]},
+  {g:"G45", members:["Diego","Breanna Otero"]}
+];
+
+/* ═══ LOOKUP LOGIC ═══ */
+const nameInput = document.getElementById('name-input');
+const btnFind = document.getElementById('btn-find');
+const lookupMsg = document.getElementById('lookup-msg');
+const groupPanel = document.getElementById('group-panel');
+const memberList = document.getElementById('member-list');
+
+let foundGroup = null;
+let foundName = '';
+let addedMembers = new Set();
+
+// Normalize for comparison
+function norm(s){ return s.trim().toLowerCase().replace(/\s+/g,' '); }
+
+function findGuest(input){
+  const n = norm(input);
+  if(!n) return null;
+  for(const group of GUEST_DB){
+    for(const member of group.members){
+      if(norm(member) === n) return { group, matchedName: member };
+    }
+  }
+  // Try partial / fuzzy: first name only or last name only
+  for(const group of GUEST_DB){
+    for(const member of group.members){
+      const parts = norm(member).split(' ');
+      const inputParts = n.split(' ');
+      // Match if all input words appear in the member name
+      if(inputParts.length >= 1 && inputParts.every(p => parts.some(mp => mp.startsWith(p) || mp === p))){
+        return { group, matchedName: member };
+      }
+    }
+  }
+  return null;
+}
+
+btnFind.addEventListener('click', doLookup);
+nameInput.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); doLookup(); }});
+
+function doLookup(){
+  const input = nameInput.value.trim();
+  if(!input){ lookupMsg.className='lookup-msg error'; lookupMsg.innerHTML='<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7,4 L7,8 M7,10 L7,10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Please enter your name.'; return; }
+
+  const result = findGuest(input);
+  if(!result){
+    lookupMsg.className='lookup-msg error';
+    lookupMsg.innerHTML='<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7,4 L7,8 M7,10 L7,10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Name not found. Please enter your name exactly as it appears on your invitation.';
+    groupPanel.classList.remove('show');
+    return;
+  }
+
+  foundGroup = result.group;
+  foundName = result.matchedName;
+  addedMembers = new Set([foundName]); // Auto-add the person who looked up
+
+  lookupMsg.className='lookup-msg success';
+  lookupMsg.innerHTML=`<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M4,7 L6,9.5 L10,4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Welcome, <strong>${foundName}</strong>! We found your invitation.`;
+
+  nameInput.disabled = true;
+  btnFind.textContent = '✓ Found';
+  btnFind.disabled = true;
+  btnFind.style.background = 'var(--fern)';
+
+  renderMembers();
+  groupPanel.classList.add('show');
+  groupPanel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+
+function renderMembers(){
+  let html = '';
+  for(const member of foundGroup.members){
+    const isYou = member === foundName;
+    const isAdded = addedMembers.has(member);
+    const cls = isYou ? 'member-item is-you added' : (isAdded ? 'member-item added' : 'member-item');
+
+    html += `<div class="${cls}" data-name="${member}">
+      <span class="member-name">
+        ${member}
+        ${isYou ? '<span class="you-badge">You</span>' : ''}
+        ${isAdded && !isYou ? '<span class="attending-badge">Attending</span>' : ''}
+      </span>
+      ${isYou ? '' : (isAdded
+        ? `<button type="button" class="btn-remove" onclick="toggleMember('${member.replace(/'/g,"\\'")}',false)">✕ Remove</button>`
+        : `<button type="button" class="btn-add" onclick="toggleMember('${member.replace(/'/g,"\\'")}',true)">+ Add</button>`
+      )}
+    </div>`;
+  }
+  memberList.innerHTML = html;
+}
+
+function toggleMember(name, add){
+  if(add) addedMembers.add(name);
+  else addedMembers.delete(name);
+  renderMembers();
+}
+
+// Reset button (clicking the name field area)
+function resetLookup(){
+  nameInput.disabled = false;
+  nameInput.value = '';
+  btnFind.textContent = 'Find Me';
+  btnFind.disabled = false;
+  btnFind.style.background = '';
+  lookupMsg.className = 'lookup-msg';
+  groupPanel.classList.remove('show');
+  foundGroup = null;
+  foundName = '';
+  addedMembers.clear();
+  nameInput.focus();
+}
+
+/* ═══ LETTER FOLD & FLY ANIMATION ═══ */
+const letterWrapper = document.getElementById('letter-wrapper');
+const letterPaper = document.getElementById('letter-paper');
+const letterName = document.getElementById('letter-name');
+const flyOverlay = document.getElementById('fly-overlay');
+const successScreen = document.getElementById('success-screen');
+
+async function playLetterAnimation(name, attending) {
+  letterName.textContent = name;
+  letterPaper.querySelector('em:last-child').textContent =
+    attending === 'yes' ? 'Joyfully Accepts!' : 'Regretfully Declines';
+
+  flyOverlay.classList.add('active');
+  letterWrapper.style.display = 'block';
+
+  await delay(300);
+  letterWrapper.classList.add('phase-shrink');
+  await delay(700);
+  letterWrapper.classList.add('phase-envelope');
+  await delay(500);
+  letterWrapper.classList.add('phase-seal');
+  await delay(500);
+  letterWrapper.classList.add('phase-fly');
+  await delay(1500);
+
+  letterWrapper.style.display = 'none';
+  letterWrapper.className = 'letter-wrapper';
+  flyOverlay.classList.remove('active');
+  successScreen.classList.add('show');
+}
+
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+/* ═══ FORM SUBMISSION ═══ */
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz6Wh6MMKm-u1mxp5QC2i3cICt1UPw_b5yfiIfkNXZNsbqtpyAzYO_SD_tNJf7iB_cELQ/exec';
+
+document.getElementById('btn-submit-rsvp').addEventListener('click', async function() {
+  const btn = this;
+  const attending = document.querySelector('input[name="attending"]:checked');
+
+  if(!foundName){ alert('Please find your invitation first.'); return; }
+  if(!attending){ alert('Please select whether you are attending.'); return; }
+
+  const data = {
+    submitter: foundName,
+    group: foundGroup.g,
+    attending: attending.value,
+    attending_members: [...addedMembers].join(', '),
+    total_attending: addedMembers.size,
+    phone: document.getElementById('rsvp-phone').value,
+    notes: document.getElementById('rsvp-notes').value
+  };
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    await delay(400);
+    playLetterAnimation(foundName, attending.value);
+
+  } catch {
+    btn.disabled = false;
+    btn.textContent = 'Send RSVP';
+    alert('Something went wrong — please try again.');
+  }
+});
+</script>
+</body>
+</html>
